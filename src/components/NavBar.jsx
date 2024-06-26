@@ -1,46 +1,80 @@
-import { useState, useEffect } from "react";
-import { motion, useScroll, useVelocity } from "framer-motion";
-
 export default function NavBar() {
-  const slideDistance = 80;
-  const threshold = 200;
-
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-
-  const [isScrollingBack, setIsScrollingBack] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
-  const [isInView, setIsInView] = useState(true);
-
-  useEffect(() => {
-    scrollVelocity.on("change", (latest) => {
-      if (latest > 0) {
-        setIsScrollingBack(false);
-        return;
-      }
-      if (latest < -threshold) {
-        setIsScrollingBack(true);
-        return;
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    scrollY.on("change", (latest) => setIsAtTop(latest <= 0));
-  }, []);
-
-  useEffect(() => {
-    setIsInView(isScrollingBack || isAtTop);
-  }, [isScrollingBack, isAtTop]);
-
   return (
-    <motion.div
-      className="navbar"
-      animate={{ y: isInView ? 0 : -slideDistance }}
-      transition={{ duration: 0.2, delay: 0.25, ease: "easeInOut" }}
-      style={{ height: slideDistance }}
-    >
-      <h1>WAKARANAI</h1>
-    </motion.div>
+    <div className="navbar absolute top-0 text-white z-50 ">
+      <div className="navbar-start ">
+        <div className="dropdown ">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black"
+          >
+            <li>
+              <a>Homepage</a>
+            </li>
+            <li>
+              <a>Portfolio</a>
+            </li>
+            <li>
+              <a>About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="navbar-center">
+        <a className="btn btn-ghost text-xl">WAKARANAI</a>
+      </div>
+      <div className="navbar-end">
+        <button className="btn btn-ghost btn-circle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </button>
+        <button className="btn btn-ghost btn-circle">
+          <div className="indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+              />
+            </svg>
+            <span className="badge badge-xs badge-primary indicator-item"></span>
+          </div>
+        </button>
+      </div>
+    </div>
   );
 }

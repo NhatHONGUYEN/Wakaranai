@@ -6,6 +6,7 @@ export default function Home() {
     <div className="relative w-full h-screen">
       <NavBar />
       <div className="absolute inset-0 bg-gradient-to-b from-black opacity-60"></div>
+
       <video
         src={womanVideo}
         autoPlay
