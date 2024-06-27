@@ -1,7 +1,8 @@
+import transition from "../animations/transitions";
 import womanVideo from "../assets/images/womanVideo (2).mp4";
 import NavBar from "../components/NavBar";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="relative w-full h-screen">
       <NavBar />
@@ -17,4 +18,6 @@ export default function Home() {
       ></video>
     </div>
   );
-}
+};
+
+export default transition(Home);

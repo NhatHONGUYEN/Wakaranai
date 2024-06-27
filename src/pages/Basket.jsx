@@ -1,5 +1,6 @@
-import React from "react";
+import transition from "../animations/transitions";
 
-export default function Basket() {
+const Basket = () => {
   return <div>Basket</div>;
-}
+};
+export default transition(Error);
