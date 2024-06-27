@@ -2,12 +2,12 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Basket from "./pages/Basket";
 import Error from "./pages/Error";
 import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/NavBar";
 import WomanShop from "./pages/WomanShop";
 import ManShop from "./pages/ManShop";
+import Basket from "./components/Basket";
 
 function App() {
   const location = useLocation();

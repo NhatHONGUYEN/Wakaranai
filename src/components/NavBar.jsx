@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Basket from "./Basket";
 
 export default function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="navbar absolute top-0  z-50 ">
+    <div className="navbar absolute top-0  z-40 ">
       <div className="navbar-start ">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -51,7 +55,10 @@ export default function NavBar() {
             />
           </svg>
         </button>
-        <button className="btn btn-ghost btn-circle">
+        <button
+          onClick={() => setOpen((prev) => !prev)}
+          className="btn btn-ghost btn-circle"
+        >
           <div className="indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +77,7 @@ export default function NavBar() {
             <span className="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button>
+        <Basket open={open} setOpen={setOpen} />
       </div>
     </div>
   );
