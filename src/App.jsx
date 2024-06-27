@@ -8,9 +8,11 @@ import NavBar from "./components/NavBar";
 import WomanShop from "./pages/WomanShop";
 import ManShop from "./pages/ManShop";
 import Basket from "./components/Basket";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
+  const [open, setOpen] = useState(false);
   return (
     <AnimatePresence mode="wait">
       <NavBar />
@@ -18,7 +20,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/basket" element={<Basket />} />
+        <Route
+          path="/basket"
+          element={<Basket open={open} setOpen={setOpen} />}
+        />
         <Route path="/error" element={<Error />} />
         <Route path="/womanshop" element={<WomanShop />} />
         <Route path="/manshop" element={<ManShop />} />

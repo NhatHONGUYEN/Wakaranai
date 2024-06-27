@@ -7,6 +7,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import PropTypes from "prop-types";
+import ButtonQuantity from "../reusable ui/ButtonQuantity";
 
 export default function Basket({ open, setOpen }) {
   // Component code...
@@ -105,9 +106,7 @@ export default function Basket({ open, setOpen }) {
                                 </p>
                               </div>
                               <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className="text-gray-500">
-                                  Qty {product.quantity}
-                                </p>
+                                <ButtonQuantity />
 
                                 <div className="flex">
                                   <button
