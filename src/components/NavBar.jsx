@@ -28,9 +28,7 @@ export default function NavBar() {
             <Link to="/">
               <a>Homepage</a>
             </Link>
-            <Link to="/error">
-              <a>Portfolio</a>
-            </Link>
+            <Link to="/shop">Shop</Link>
             <Link to="/contact">
               <a>About</a>
             </Link>

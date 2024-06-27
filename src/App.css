@@ -6,6 +6,7 @@
     height: 100vh;
     background: black;
     transform-origin: bottom;
+    z-index: 1000;
 }
 
 .slide-out { 
@@ -16,4 +17,12 @@
     height: 100vh;
     background: black;
     transform-origin: top;
+    z-index: 1000;
+}
+
+@font-face {
+    font-family: 'Pinot';
+    src: url('./fonts/pinot/Pinot.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
