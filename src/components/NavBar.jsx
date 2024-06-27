@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <div className="navbar absolute top-0 text-white z-50 ">
+    <div className="navbar absolute top-0  z-50 ">
       <div className="navbar-start ">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -25,13 +25,9 @@ export default function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black"
           >
-            <Link to="/">
-              <a>Homepage</a>
-            </Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/contact">
-              <a>About</a>
-            </Link>
+            <Link to="/">Homepage</Link>
+            <Link to="/womanshop">Women</Link>
+            <Link to="/manshop">Men</Link>
           </ul>
         </div>
       </div>

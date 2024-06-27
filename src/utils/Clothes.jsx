@@ -63,7 +63,7 @@ const Clothes = [
         items: [
           {
             id: 5,
-            name: "Oversize Shirt",
+            name: "Oversize Man Shirt",
             price: 49.99,
             sizes: ["S", "M", "L", "XL"],
             quantity: 18,

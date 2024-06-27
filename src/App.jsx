@@ -6,7 +6,8 @@ import Basket from "./pages/Basket";
 import Error from "./pages/Error";
 import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/NavBar";
-import Shop from "./pages/Shop";
+import WomanShop from "./pages/WomanShop";
+import ManShop from "./pages/ManShop";
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/error" element={<Error />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/womanshop" element={<WomanShop />} />
+        <Route path="/manshop" element={<ManShop />} />
       </Routes>
     </AnimatePresence>
   );

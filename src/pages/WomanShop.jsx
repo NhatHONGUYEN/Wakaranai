@@ -6,8 +6,9 @@ import oversizeShirtImage from "../assets/images/chemiseoversivefemme (1).jpg";
 import checkeredVestImage from "../assets/images/vesteaCarreau (1).jpg";
 import suitImage from "../assets/images/costumeEnLinFemme (1).jpg";
 import trenchCoatImage from "../assets/images/trench (1).jpg";
+import Card from "../components/Card";
 
-export default function Shop() {
+export default function WomanShop() {
   // Map of item names to their corresponding images
   const itemImages = {
     "Oversize Shirt": oversizeShirtImage,
@@ -33,29 +34,12 @@ export default function Shop() {
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {Clothes[0].Clothes.female.items.map((item, index) => (
-            <li key={index}>
-              <a className="group block overflow-hidden">
-                <img
-                  src={itemImages[item.name] || ""} // Use the corresponding image or the default image
-                  alt={item.name}
-                  className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                />
-
-                <div className="relative bg-white pt-3">
-                  <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                    {item.name}
-                  </h3>
-
-                  <p className="mt-2">
-                    <span className="sr-only"> Regular Price </span>
-
-                    <span className="tracking-wider text-gray-900">
-                      ${item.price}
-                    </span>
-                  </p>
-                </div>
-              </a>
-            </li>
+            <Card
+              key={index} // Add a unique "key" prop
+              itemImages={itemImages}
+              name={item.name}
+              price={item.price}
+            />
           ))}
         </ul>
       </div>
