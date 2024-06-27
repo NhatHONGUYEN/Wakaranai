@@ -6,7 +6,7 @@ import oversizeShirtImage from "../assets/images/chemiseoversivefemme (1).jpg";
 import checkeredVestImage from "../assets/images/vesteaCarreau (1).jpg";
 import suitImage from "../assets/images/costumeEnLinFemme (1).jpg";
 import trenchCoatImage from "../assets/images/trench (1).jpg";
-import Card from "../components/Card";
+import Card from "../components/card/Card";
 
 export default function WomanShop() {
   // Map of item names to their corresponding images
@@ -35,7 +35,8 @@ export default function WomanShop() {
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {Clothes[0].Clothes.female.items.map((item, index) => (
             <Card
-              key={index} // Add a unique "key" prop
+              key={index}
+              id={index}
               itemImages={itemImages}
               name={item.name}
               price={item.price}

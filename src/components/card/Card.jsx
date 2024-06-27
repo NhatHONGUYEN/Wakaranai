@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import ButtonAdd from "../reusable ui/ButtonAdd";
+import ButtonAdd from "../../reusable ui/ButtonAdd";
 
-export default function Card({ index, itemImages, name, price }) {
+export default function Card({ id, itemImages, name, price }) {
   return (
     <div>
-      <li key={index}>
+      <li key={id}>
         <a className="group block overflow-hidden relative">
           <img
             src={itemImages[name] || ""} // Use the corresponding image or the default image
@@ -30,7 +30,7 @@ export default function Card({ index, itemImages, name, price }) {
 }
 
 Card.propTypes = {
-  index: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   itemImages: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
