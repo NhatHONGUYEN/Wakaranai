@@ -17,27 +17,48 @@ export default function Shop() {
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {Clothes[0].Clothes.female.items.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center border p-4 rounded-lg"
-          >
-            <img
-              src={itemImages[item.name] || ""} // Use the corresponding image or the default image
-              alt={item.name}
-              className="w-64 h-64 object-cover rounded-lg"
-            />
-            <p className="text-2xl font-bold mt-2">{item.name}</p>
-            <p className="text-xl font-bold mt-1">${item.price}</p>
-            <p className="text-lg mt-1">Sizes: {item.sizes.join(", ")}</p>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2">
-              Add to Cart
-            </button>
-          </div>
-        ))}
+    <section className="flex items-center justify-center h-screen">
+      <div className="max-w-screen-xl px-4 pt-8 sm:px-6 sm:py-12 lg:px-8">
+        <header className="text-center">
+          <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+            Product Collection
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-md text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+            praesentium cumque iure dicta incidunt est ipsam, officia dolor
+            fugit natus?
+          </p>
+        </header>
+
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {Clothes[0].Clothes.female.items.map((item, index) => (
+            <li key={index}>
+              <a className="group block overflow-hidden">
+                <img
+                  src={itemImages[item.name] || ""} // Use the corresponding image or the default image
+                  alt={item.name}
+                  className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                />
+
+                <div className="relative bg-white pt-3">
+                  <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                    {item.name}
+                  </h3>
+
+                  <p className="mt-2">
+                    <span className="sr-only"> Regular Price </span>
+
+                    <span className="tracking-wider text-gray-900">
+                      ${item.price}
+                    </span>
+                  </p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 }
