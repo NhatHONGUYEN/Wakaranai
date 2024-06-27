@@ -1,5 +1,5 @@
 import transition from "../animations/transitions";
-import womanVideo from "../assets/images/womanVideo (2).mp4";
+import womanVideo from "../assets/images/videowoman.mp4";
 import NavBar from "../components/NavBar";
 
 const Home = () => {
