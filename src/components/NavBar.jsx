@@ -9,7 +9,10 @@ export default function NavBar() {
   const basketCount = basket.lenght;
 
   return (
-    <div className="navbar absolute top-0  z-40 ">
+    <div
+      className="navbar absolute
+     top-0  z-40 "
+    >
       <div className="navbar-start ">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

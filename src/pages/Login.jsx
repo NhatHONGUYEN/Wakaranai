@@ -1,7 +1,3 @@
-import transition from "../animations/transitions";
-
-const Login = () => {
+export default function Login() {
   return <div>Login</div>;
-};
-
-export default transition(Login);
+}

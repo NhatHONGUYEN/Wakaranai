@@ -1,10 +1,8 @@
-import transition from "../animations/transitions";
-import womanVideo from "../assets/images/videowoman.mp4";
+import womanVideo from "../assets/images/womanVideo (2).mp4";
 
-const Home = () => {
+export default function Home() {
   return (
-    <div className="relative w-full h-screen">
-      <div className="absolute inset-0 bg-gradient-to-t from-black opacity-60"></div>
+    <div className="w-full h-screen">
       <video
         src={womanVideo}
         autoPlay
@@ -15,6 +13,4 @@ const Home = () => {
       ></video>
     </div>
   );
-};
-
-export default transition(Home);
+}
