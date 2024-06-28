@@ -49,7 +49,7 @@ const Clothes = [
             price: 89.99,
             sizes: ["S", "M", "L", "XL"],
             quantity: 12,
-            images: [
+            image: [
               "/trench (1).jpg",
               "/trench (2).jpg",
               "/trench (3).jpg",

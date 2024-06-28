@@ -10,7 +10,7 @@ export default function Card({ id, itemImages, name, price }) {
 
   return (
     <div>
-      <li key={id}>
+      <li key={id} className="block overflow-hidden group">
         <a className="group block overflow-hidden relative">
           <img
             src={itemImages[name] || ""}

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavBarLeft from "./NavBarLeft";
 
 export default function NavBar() {
+  const navigate = useNavigate();
   return (
     <div className="navbar absolute top-0 z-40">
       <div className="navbar-start">
@@ -28,12 +29,12 @@ export default function NavBar() {
             style={{ transformOrigin: "top left" }}
           >
             <li>
-              <Link
-                to="/"
+              <button
+                onClick={() => navigate("/")}
                 className="hover:translate-x-2 transition-transform hover:slate-200"
               >
                 Homepage
-              </Link>
+              </button>
             </li>
             <li>
               <Link
@@ -55,7 +56,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">WAKARANAI</a>
+        <a className="btn btn-ghost text-xl cursor-none">WAKARANAI</a>
       </div>
       <NavBarLeft />
     </div>

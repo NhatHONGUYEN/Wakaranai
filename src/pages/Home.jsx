@@ -10,17 +10,14 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a delay for loading
-    const loadingTimeout = setTimeout(() => {
+    setIsLoading(true);
+    setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
-
-    // Clean up the timeout to prevent memory leaks
-    return () => clearTimeout(loadingTimeout);
+    }, 1600);
   }, []);
 
   return (
-    <div className="w-full h-screen relative bg-slate-50   ">
+    <div className="w-full h-screen relative bg-slate-50">
       {isLoading ? (
         <p className="whitespace-pre-wrap absolute bottom-20 right-14 text-8xl font-medium tracking-tighter text-black dark:text-white">
           <NumberTicker value={100} />
@@ -58,7 +55,8 @@ export default function App() {
                     </h1>
 
                     <div className="mt-10 flex items-center justify-center gap-x-6">
-                      <a
+                      <Link
+                        to="/womanshop"
                         className="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
                         href="#"
                       >
@@ -83,9 +81,10 @@ export default function App() {
                           {" "}
                           For her{" "}
                         </span>
-                      </a>
+                      </Link>
 
-                      <a
+                      <Link
+                        to="/manshop"
                         className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
                         href="#"
                       >
@@ -110,7 +109,7 @@ export default function App() {
                           {" "}
                           For him{" "}
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

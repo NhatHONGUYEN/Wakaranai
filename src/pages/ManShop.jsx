@@ -34,8 +34,8 @@ export default function ManShop() {
       className="bg-slate-50"
     >
       <NavBar />
-      <section className="flex items-center justify-center h-screen">
-        <div className="max-w-screen-xl px-4 pt-8 sm:px-6 sm:py-12 lg:px-8">
+      <section className="flex items-center justify-center h-full lg:h-screen">
+        <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">
             <motion.h2
               className="text-xl font-bold text-gray-900 sm:text-3xl"
@@ -56,7 +56,7 @@ export default function ManShop() {
           </header>
 
           <motion.ul
-            className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-8 block  sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             variants={FADE_UP_ANIMATION_VARIANTS}
           >
             {Clothes[0].Clothes.male.items.map((item, index) => (
