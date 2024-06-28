@@ -26,7 +26,7 @@ export default function Card({ id, itemImages, name, price }) {
             </h3>
             <p className="mt-2">
               <span className="sr-only"> Regular Price </span>
-              <span className="tracking-wider text-gray-900">${price}</span>
+              <span className="tracking-wider text-gray-900">{price}€</span>
             </p>
           </div>
         </a>

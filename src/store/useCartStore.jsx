@@ -2,6 +2,24 @@ import { create } from "zustand";
 
 const useCartStore = create((set, get) => ({
   basket: [],
+  Clothes: [],
+  totalAmount: 0,
+
+  getItemById: (productId) => {
+    return get().basket.find((item) => item.id === productId);
+  },
+
+  updateTotalAmount: () => {
+    const total = get().basket.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+    const formattedTotal = new Intl.NumberFormat("fr-FR", {
+      style: "currency",
+      currency: "EUR",
+    }).format(total);
+    set({ totalAmount: formattedTotal });
+  },
 
   addItemToBasket: (item) => {
     const itemExists = get().basket.find(
@@ -23,6 +41,7 @@ const useCartStore = create((set, get) => ({
         ],
       });
     }
+    get().updateTotalAmount();
   },
 
   increaseQuantity: (productId) => {
@@ -36,8 +55,10 @@ const useCartStore = create((set, get) => ({
       }
 
       set({ basket: [...get().basket] });
+      get().updateTotalAmount();
     }
   },
+
   decreaseQuantity: (productId) => {
     const itemExists = get().basket.find(
       (basketItem) => basketItem.id === productId
@@ -55,21 +76,23 @@ const useCartStore = create((set, get) => ({
           set({ basket: [...get().basket] });
         }
       }
+      get().updateTotalAmount();
     }
   },
-  removeItemFromBasket: (itemId) => {
-    const itemExists = get().basket.find(
-      (basketItem) => basketItem.id === itemId
-    );
+
+  removeItemFromBasket: (id) => {
+    const itemExists = get().basket.find((basketItem) => basketItem.id === id);
 
     if (itemExists) {
       if (typeof itemExists.quantity === "number") {
         const updatedBasketItems = get().basket.filter(
-          (item) => item.id !== itemId
+          (item) => item.id !== id
         );
-        set({ cartItems: updatedBasketItems });
+        set({ basket: updatedBasketItems });
       }
+      get().updateTotalAmount();
     }
   },
 }));
+
 export default useCartStore;
