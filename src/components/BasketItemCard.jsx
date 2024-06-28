@@ -25,7 +25,7 @@ export default function BasketItemCard({ item }) {
               <h3>
                 <a>{item.name}</a>
               </h3>
-              <p className="ml-4">{item.price}</p>
+              <p className="ml-4">{item.price}€</p>
             </div>
             <p className="mt-1 text-sm text-gray-500">color</p>
           </div>
