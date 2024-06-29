@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
+import { Link } from "react-router-dom";
 
 export default function Card({ id, itemImages, name, price }) {
   const { addItemToBasket } = useCartStore();
@@ -11,7 +12,10 @@ export default function Card({ id, itemImages, name, price }) {
   return (
     <div>
       <li key={id} className="block overflow-hidden group">
-        <a className="group block overflow-hidden relative">
+        <Link
+          to={`/product/${id}`}
+          className="group block overflow-hidden relative"
+        >
           <img
             src={itemImages[name] || ""}
             alt={name}
@@ -29,7 +33,7 @@ export default function Card({ id, itemImages, name, price }) {
               <span className="tracking-wider text-gray-900">{price}€</span>
             </p>
           </div>
-        </a>
+        </Link>
       </li>
     </div>
   );

@@ -7,6 +7,7 @@ import WomanShop from "./pages/WomanShop";
 import ManShop from "./pages/ManShop";
 import Basket from "./components/Basket";
 import { useState } from "react";
+import ProductCard from "./components/card/ProductCard";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/error" element={<Error />} />
         <Route path="/womanshop" element={<WomanShop />} />
         <Route path="/manshop" element={<ManShop />} />
+        <Route path="/product/:id" element={<ProductCard />} />
       </Routes>
     </>
   );

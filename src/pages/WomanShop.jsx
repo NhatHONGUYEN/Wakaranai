@@ -4,7 +4,6 @@ import FADE_UP_ANIMATION_VARIANTS from "../animations/FADE_UP_ANIMATION_VARIANTS
 import { useNavigate } from "react-router-dom";
 
 // Import images
-
 import oversizeShirtImage from "../assets/images/chemiseoversivefemme (1).jpg";
 import checkeredVestImage from "../assets/images/vesteaCarreau (1).jpg";
 import suitImage from "../assets/images/costumeEnLinFemme (1).jpg";
@@ -23,7 +22,7 @@ export default function WomanShop() {
   };
 
   const handleCardClick = (id) => {
-    navigate(`/clothesPresentation/${id}`);
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -65,14 +64,14 @@ export default function WomanShop() {
             className="mt-8 block  sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
             variants={FADE_UP_ANIMATION_VARIANTS}
           >
-            {Clothes[0].Clothes.female.items.map((item, index) => (
+            {Clothes[0].Clothes.female.items.map((item) => (
               <Card
-                key={index}
-                id={index}
+                key={item.id}
+                id={item.id}
                 itemImages={itemImages}
                 name={item.name}
                 price={item.price}
-                onClick={() => handleCardClick(index)}
+                onClick={() => handleCardClick(item.id)}
               />
             ))}
           </motion.ul>
