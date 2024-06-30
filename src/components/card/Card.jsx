@@ -1,25 +1,29 @@
 import PropTypes from "prop-types";
 import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({ id, itemImages, name, price }) {
   const { addItemToBasket } = useCartStore();
+  const navigate = useNavigate();
+
   const onAddToBasket = () => {
     addItemToBasket({ id, name, price, image: itemImages[name] });
+  };
+
+  const handleImageClick = () => {
+    navigate(`/product/${id}`);
   };
 
   return (
     <div>
       <li key={id} className="block overflow-hidden group">
-        <Link
-          to={`/product/${id}`}
-          className="group block overflow-hidden relative"
-        >
+        <div className="group block overflow-hidden relative">
           <img
             src={itemImages[name] || ""}
             alt={name}
             className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            onClick={handleImageClick}
           />
           <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
             <ButtonAdd onClick={onAddToBasket} />
@@ -33,7 +37,7 @@ export default function Card({ id, itemImages, name, price }) {
               <span className="tracking-wider text-gray-900">{price}€</span>
             </p>
           </div>
-        </Link>
+        </div>
       </li>
     </div>
   );

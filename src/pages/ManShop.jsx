@@ -4,13 +4,14 @@ import FADE_UP_ANIMATION_VARIANTS from "../animations/FADE_UP_ANIMATION_VARIANTS
 import { useNavigate } from "react-router-dom";
 // Import images
 
-import oversizeManShirtImage from "../assets/images/chemiseOversizeHomme (1).jpg";
-import blackShirtImage from "../assets/images/chemiseNoir (1).jpg";
-import pulloverImage from "../assets/images/pullHomme (1).jpg";
+import oversizeManShirtImage from "/chemiseOversizeHomme (1).jpg";
+import blackShirtImage from "/chemiseNoir (1).jpg";
+import pulloverImage from "/pullHomme (1).jpg";
 import Card from "../components/card/Card";
 import NavBar from "../components/NavBar";
 
 export default function ManShop() {
+  const navigate = useNavigate();
   // Map of item names to their corresponding images
   const itemImages = {
     "Oversize Man Shirt": oversizeManShirtImage,

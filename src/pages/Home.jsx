@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import womanVideo from "../assets/images/womanVideo (2).mp4";
+import womanVideo from "/womanVideo (2).mp4";
 import NumberTicker from "../animations/NumberTicker";
 import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";

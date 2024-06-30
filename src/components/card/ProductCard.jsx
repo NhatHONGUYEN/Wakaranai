@@ -22,16 +22,23 @@ export default function ProductCard() {
     return <div>Produit non trouvé</div>;
   }
 
+  console.log(product);
+
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <div>
+    <div className="text-center p-4 border border-gray-200 rounded-lg">
+      <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
+      <div className="flex justify-center mb-4">
         {product.image.map((imgSrc, index) => (
-          <img key={index} src={imgSrc} alt={`${product.name} ${index + 1}`} />
+          <img
+            key={index}
+            src={imgSrc}
+            alt={`${product.name} ${index + 1}`}
+            className="w-48 h-48 object-cover"
+          />
         ))}
       </div>
-      <p>Prix: {product.price}€</p>
-      <p>Quantité: {product.quantity}</p>
+      <p className="text-lg mb-2">Price: {product.price}€</p>
+      <p className="text-lg">Quantity: {product.quantity}</p>
     </div>
   );
 }

@@ -4,10 +4,10 @@ import FADE_UP_ANIMATION_VARIANTS from "../animations/FADE_UP_ANIMATION_VARIANTS
 import { useNavigate } from "react-router-dom";
 
 // Import images
-import oversizeShirtImage from "../assets/images/chemiseoversivefemme (1).jpg";
-import checkeredVestImage from "../assets/images/vesteaCarreau (1).jpg";
-import suitImage from "../assets/images/costumeEnLinFemme (1).jpg";
-import trenchCoatImage from "../assets/images/trench (1).jpg";
+import oversizeShirtImage from "/chemiseoversivefemme (1).jpg";
+import checkeredVestImage from "/vesteaCarreau (1).jpg";
+import suitImage from "/costumeEnLinFemme (1).jpg";
+import trenchCoatImage from "/trench (1).jpg";
 import Card from "../components/card/Card";
 import NavBar from "../components/NavBar";
 
