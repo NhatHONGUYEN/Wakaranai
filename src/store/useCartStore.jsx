@@ -9,6 +9,13 @@ const useCartStore = create((set, get) => ({
     return get().basket.find((item) => item.id === productId);
   },
 
+  updateBasketCount: () => {
+    const basketCount = get().basket.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+    set({ basketCount });
+  },
   updateTotalAmount: () => {
     const total = get().basket.reduce(
       (total, item) => total + item.quantity * item.price,
@@ -19,6 +26,18 @@ const useCartStore = create((set, get) => ({
       currency: "EUR",
     }).format(total);
     set({ totalAmount: formattedTotal });
+  },
+
+  updateTotalItemAmount: () => {
+    const updatedBasket = get().basket.map((item) => {
+      const totalItemAmount = item.quantity * item.price;
+      const formattedTotalItemAmount = new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+      }).format(totalItemAmount);
+      return { ...item, totalItemAmount: formattedTotalItemAmount };
+    });
+    set({ basket: updatedBasket });
   },
 
   addItemToBasket: (item) => {

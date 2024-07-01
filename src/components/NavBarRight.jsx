@@ -1,10 +1,13 @@
 import Basket from "./Basket";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useCartStore from "../store/useCartStore";
 export default function NavBarRight() {
   const [open, setOpen] = useState(false);
-  const { basket } = useCartStore();
-  const basketCount = basket.length;
+  const { basket, basketCount, updateBasketCount } = useCartStore();
+
+  useEffect(() => {
+    updateBasketCount();
+  }, [basket, updateBasketCount]);
 
   return (
     <div className="navbar-end">

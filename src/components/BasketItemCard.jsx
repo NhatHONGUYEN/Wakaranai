@@ -1,12 +1,18 @@
 import PropTypes from "prop-types";
 import ButtonQuantity from "../reusable ui/ButtonQuantity";
 import useCartStore from "../store/useCartStore";
+import { useEffect } from "react";
 
 export default function BasketItemCard({ item }) {
-  const { removeItemFromBasket } = useCartStore();
+  const { removeItemFromBasket, updateTotalItemAmount } = useCartStore();
+
   const onRemoveItem = () => {
     removeItemFromBasket(item.id);
   };
+
+  useEffect(() => {
+    updateTotalItemAmount();
+  }, [item.quantity, updateTotalItemAmount]);
 
   return (
     <div>
@@ -25,9 +31,8 @@ export default function BasketItemCard({ item }) {
               <h3>
                 <a>{item.name}</a>
               </h3>
-              <p className="ml-4">{item.price}€</p>
+              <p className="ml-4">{item.totalItemAmount}</p>
             </div>
-            <p className="mt-1 text-sm text-gray-500">color</p>
           </div>
           <div className="flex flex-1 items-end justify-between text-sm">
             <ButtonQuantity itemId={item.id} />
@@ -55,5 +60,6 @@ BasketItemCard.propTypes = {
     price: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired,
     image: PropTypes.string, // Make the image prop optional
+    totalItemAmount: PropTypes.number.isRequired, // Add totalItemAmount prop
   }).isRequired,
 };
