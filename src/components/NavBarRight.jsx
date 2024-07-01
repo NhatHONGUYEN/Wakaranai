@@ -1,9 +1,26 @@
 import Basket from "./Basket";
 import { useState, useEffect } from "react";
 import useCartStore from "../store/useCartStore";
+import useAuthStore from "../store/useAuthStore"; // Import the useAuthStore
+import { Link, useNavigate } from "react-router-dom";
+
 export default function NavBarRight() {
   const [open, setOpen] = useState(false);
   const { basket, basketCount, updateBasketCount } = useCartStore();
+  const { user, signOut } = useAuthStore();
+
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      // Sign-out successful.
+      navigate("/");
+    } catch (error) {
+      // An error happened.
+      console.error("Error signing out:", error);
+    }
+  };
 
   useEffect(() => {
     updateBasketCount();
@@ -36,6 +53,23 @@ export default function NavBarRight() {
         </div>
       </button>
       <Basket open={open} setOpen={setOpen} />
+      {user ? (
+        <div>
+          <button className="btn btn-ghost ml-4 ">Account</button>
+          <button onClick={handleSignOut} className="btn btn-ghost">
+            Log Out
+          </button>
+        </div>
+      ) : (
+        <div className="flex mr-11 md:space-x-4">
+          <Link to="/login" className="btn btn-ghost">
+            Sign In
+          </Link>
+          <Link to="/signup" className="btn btn-primary">
+            Sign Up
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import NavBarRight from "./NavBarRight";
 export default function NavBar() {
   const navigate = useNavigate();
   return (
-    <div className="navbar absolute top-0 z-40">
+    <div className="navbar absolute top-0 z-40 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -55,8 +55,8 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-      <div className="navbar-center">
-        <a className="btn btn-ghost text-xl cursor-none">WAKARANAI</a>
+      <div className="navbar-center hidden lg:block">
+        <p className=" text-xl ">WAKARANAI</p>
       </div>
       <NavBarRight />
     </div>

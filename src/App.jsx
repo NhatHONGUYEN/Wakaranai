@@ -8,6 +8,7 @@ import ManShop from "./pages/ManShop";
 import Basket from "./components/Basket";
 import { useState } from "react";
 import ProductCard from "./components/card/ProductCard";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route
           path="/basket"
           element={<Basket open={open} setOpen={setOpen} />}
