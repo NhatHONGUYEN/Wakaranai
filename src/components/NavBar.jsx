@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import NavBarLeft from "./NavBarLeft";
+import NavBarRight from "./NavBarRight";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ export default function NavBar() {
       <div className="navbar-center">
         <a className="btn btn-ghost text-xl cursor-none">WAKARANAI</a>
       </div>
-      <NavBarLeft />
+      <NavBarRight />
     </div>
   );
 }
