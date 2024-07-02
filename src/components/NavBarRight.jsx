@@ -55,7 +55,9 @@ export default function NavBarRight() {
       <Basket open={open} setOpen={setOpen} />
       {user ? (
         <div>
-          <button className="btn btn-ghost ml-4 ">Account</button>
+          <Link to="/favorites" className="btn btn-ghost ml-4 ">
+            Account
+          </Link>
           <button onClick={handleSignOut} className="btn btn-ghost">
             Log Out
           </button>

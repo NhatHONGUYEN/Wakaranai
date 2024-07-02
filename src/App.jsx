@@ -9,6 +9,7 @@ import Basket from "./components/Basket";
 import { useState } from "react";
 import ProductCard from "./components/card/ProductCard";
 import SignUpPage from "./pages/SignUpPage";
+import Favorites from "./pages/Favorites";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/womanshop" element={<WomanShop />} />
         <Route path="/manshop" element={<ManShop />} />
         <Route path="/product/:id" element={<ProductCard />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </>
   );

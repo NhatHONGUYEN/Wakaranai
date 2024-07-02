@@ -14,9 +14,11 @@ import {
 import classNames from "classnames";
 import NavBar from "../NavBar";
 import useCartStore from "../../store/useCartStore";
+import useFavoritesStore from "../../store/useFavoritesStore";
 
 export default function ProductCard() {
   const { addItemToBasket } = useCartStore();
+  const { addToFavorites } = useFavoritesStore();
 
   const onAddToBasket = () => {
     addItemToBasket({
@@ -162,7 +164,9 @@ export default function ProductCard() {
                     className="h-6 w-6 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="sr-only">Add to favorites</span>
+                  <button onClick={() => addToFavorites(product)}>
+                    Add to favorites
+                  </button>
                 </button>
               </div>
             </div>

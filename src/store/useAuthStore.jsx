@@ -15,6 +15,7 @@ const provider = new GoogleAuthProvider();
 
 const useAuthStore = create((set) => ({
   user: null,
+  favorites: [],
 
   // Sign up with email and password
   signUpWithEmailAndPassword: async (email, password) => {
