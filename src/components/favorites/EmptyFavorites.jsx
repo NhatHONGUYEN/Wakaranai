@@ -10,7 +10,7 @@ export default function EmptyFavorites() {
   return (
     <main className="isolate z-50 h-screen relative">
       <video
-        src="../../../public/womanEmptyFav.mp4"
+        src="/womanEmptyFav.mp4"
         alt=""
         autoPlay
         loop
