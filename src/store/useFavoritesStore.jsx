@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { db, auth } from "../Api/Firebase";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 import {
   collection,
   addDoc,
@@ -39,6 +40,7 @@ const useFavoritesStore = create((set) => ({
       });
       console.log("Item added to favorites");
       // Refetch the favorites after adding an item
+      toast.success("Item added to favorites");
       getFavorites(set);
     } catch (error) {
       console.error("Error adding item to favorites: ", error);

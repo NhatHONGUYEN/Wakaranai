@@ -2,14 +2,23 @@ import { useEffect } from "react";
 import useFavoritesStore from "../store/useFavoritesStore.jsx";
 import ButtonAdd from "../reusable ui/ButtonAdd.jsx";
 import useCartStore from "../store/useCartStore.jsx";
-import { TrashIcon } from "@heroicons/react/20/solid";
+import { Toaster, toast } from "sonner";
 
 export default function Favorites() {
+  const notifyBasket = () =>
+    toast.success("Added to shopping Cart", {
+      style: {
+        background: "#6366F1",
+        color: "#FFFFFF",
+      },
+    });
+
   const { favorites, getFavorites, deleteFavorite } = useFavoritesStore();
   const { addItemToBasket } = useCartStore();
 
   const onAddToBasket = (item) => {
     addItemToBasket(item);
+    notifyBasket();
   };
 
   const onDeleteFavorite = (itemId) => {
@@ -44,8 +53,12 @@ export default function Favorites() {
                   alt={item.name}
                   className="h-[350px] w-full  object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                 />
-                <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
-                  <ButtonAdd onClick={() => onAddToBasket(item)} />
+
+                <div>
+                  <Toaster />
+                  <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
+                    <ButtonAdd onClick={() => onAddToBasket(item)} />
+                  </div>
                 </div>
                 <div className="absolute z-50 top-4 right-4">
                   <button
