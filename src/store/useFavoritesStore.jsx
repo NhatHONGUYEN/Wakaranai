@@ -1,6 +1,16 @@
 import { create } from "zustand";
 import { db, auth } from "../Api/Firebase";
-import { collection, addDoc, getDocs, doc } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
+
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc,
+  query,
+  where,
+} from "firebase/firestore";
 import "firebase/auth";
 
 const useFavoritesStore = create((set) => ({
@@ -10,6 +20,7 @@ const useFavoritesStore = create((set) => ({
       const userRef = doc(db, "users", auth.currentUser.uid);
       const favoritesRef = collection(userRef, "favorites");
       await addDoc(favoritesRef, {
+        id: uuidv4(), // generate a unique ID for the item
         itemId: item.id,
         name: item.name,
         price: item.price,
@@ -29,6 +40,21 @@ const useFavoritesStore = create((set) => ({
       set({ favorites });
     } catch (error) {
       console.error("Error getting favorites: ", error);
+    }
+  },
+
+  deleteFavorite: async (itemId) => {
+    try {
+      const userRef = doc(db, "users", auth.currentUser.uid);
+      const favoritesRef = collection(userRef, "favorites");
+      const q = query(favoritesRef, where("itemId", "==", itemId));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        deleteDoc(doc.ref);
+      });
+      console.log("Item removed from favorites");
+    } catch (error) {
+      console.error("Error removing item from favorites: ", error);
     }
   },
 }));

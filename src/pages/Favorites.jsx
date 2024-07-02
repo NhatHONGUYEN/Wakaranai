@@ -1,8 +1,19 @@
 import { useEffect } from "react";
 import useFavoritesStore from "../store/useFavoritesStore.jsx";
+import ButtonAdd from "../reusable ui/ButtonAdd.jsx";
+import useCartStore from "../store/useCartStore.jsx";
+import { TrashIcon } from "@heroicons/react/20/solid";
 
 export default function Favorites() {
-  const { favorites, getFavorites } = useFavoritesStore();
+  const { favorites, getFavorites, deleteFavorite } = useFavoritesStore();
+  const { addItemToBasket } = useCartStore();
+  const onAddToBasket = (item) => {
+    addItemToBasket(item);
+  };
+
+  const onDeleteFavorite = (itemId) => {
+    deleteFavorite(itemId);
+  };
 
   useEffect(() => {
     getFavorites();
@@ -26,12 +37,25 @@ export default function Favorites() {
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {favorites.map((item) => (
             <li key={item.id}>
-              <a href="#" className="group block overflow-hidden">
+              <a href="#" className="group block relative  overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                  className="h-[350px] w-full  object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                 />
+                <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
+                  <ButtonAdd onClick={() => onAddToBasket(item)} />
+                </div>
+                <div className="absolute z-50 top-4 right-4">
+                  <button
+                    type="button"
+                    className="rounded-full bg-white p-1 text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                    onClick={() => onDeleteFavorite(item.id)}
+                  >
+                    <span className="sr-only">Delete</span>
+                    <TrashIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                </div>
 
                 <div className="relative bg-white pt-3">
                   <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
