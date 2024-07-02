@@ -10,11 +10,13 @@ import { useState } from "react";
 import ProductCard from "./components/card/ProductCard";
 import SignUpPage from "./pages/SignUpPage";
 import Favorites from "./pages/Favorites";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [open, setOpen] = useState(false);
   return (
     <>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />

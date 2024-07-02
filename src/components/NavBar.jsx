@@ -1,10 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import NavBarRight from "./NavBarRight";
+import { motion } from "framer-motion";
 
 export default function NavBar() {
   const navigate = useNavigate();
   return (
-    <div className="navbar absolute top-0 z-40 ">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+      className="navbar absolute top-0 z-40 "
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -59,6 +69,6 @@ export default function NavBar() {
         <p className=" text-xl ">WAKARANAI</p>
       </div>
       <NavBarRight />
-    </div>
+    </motion.div>
   );
 }

@@ -9,7 +9,6 @@ import checkeredVestImage from "/vesteaCarreau (1).jpg";
 import suitImage from "/costumeEnLinFemme (1).jpg";
 import trenchCoatImage from "/trench (1).jpg";
 import Card from "../components/card/Card";
-import NavBar from "../components/NavBar";
 
 export default function WomanShop() {
   const navigate = useNavigate();
@@ -40,7 +39,6 @@ export default function WomanShop() {
       }}
       className="bg-slate-50"
     >
-      <NavBar />
       <section className="flex items-center justify-center h-full lg:h-screen">
         <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">

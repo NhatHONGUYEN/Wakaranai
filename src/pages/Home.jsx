@@ -1,24 +1,11 @@
 import { motion } from "framer-motion";
 import womanVideo from "/womanVideo (2).mp4";
-
-import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
 import GradualSpacing from "../animations/GradualSpacing";
 
 export default function App() {
   return (
     <div className="w-full h-screen relative bg-slate-50">
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        <NavBar />
-      </motion.div>
       <div className="relative h-screen ">
         <div className="mx-auto  max-w-7xl">
           <div className="relative z-10 pt-14  lg:w-full lg:max-w-2xl">
