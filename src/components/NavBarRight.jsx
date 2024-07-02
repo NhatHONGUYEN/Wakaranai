@@ -54,11 +54,14 @@ export default function NavBarRight() {
       </button>
       <Basket open={open} setOpen={setOpen} />
       {user ? (
-        <div>
+        <div className="flex mr-11 md:space-x-4">
           <Link to="/favorites" className="btn btn-ghost ml-4 ">
             Account
           </Link>
-          <button onClick={handleSignOut} className="btn btn-ghost">
+          <button
+            onClick={handleSignOut}
+            className="btn btn-ghost backdrop-brightness-125"
+          >
             Log Out
           </button>
         </div>

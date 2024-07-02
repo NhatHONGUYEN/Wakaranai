@@ -162,9 +162,7 @@ export default function ProductCard() {
                     className="h-6 w-6 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <button onClick={() => addToFavorites(product)}>
-                    Add to favorites
-                  </button>
+                  <button onClick={() => addToFavorites(product)}></button>
                 </button>
               </div>
             </div>

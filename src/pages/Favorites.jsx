@@ -7,6 +7,7 @@ import { TrashIcon } from "@heroicons/react/20/solid";
 export default function Favorites() {
   const { favorites, getFavorites, deleteFavorite } = useFavoritesStore();
   const { addItemToBasket } = useCartStore();
+
   const onAddToBasket = (item) => {
     addItemToBasket(item);
   };
@@ -49,11 +50,25 @@ export default function Favorites() {
                 <div className="absolute z-50 top-4 right-4">
                   <button
                     type="button"
-                    className="rounded-full bg-white p-1 text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    onClick={() => onDeleteFavorite(item.id)}
+                    className="btn btn-ghost btn-circle   transition-transform duration-300 group-hover:scale-110"
+                    onClick={() => onDeleteFavorite(item.itemId)}
                   >
+                    {" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
                     <span className="sr-only">Delete</span>
-                    <TrashIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
 
