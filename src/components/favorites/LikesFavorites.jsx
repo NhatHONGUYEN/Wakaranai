@@ -1,8 +1,7 @@
-import { Toaster } from "sonner";
+import { Toaster, toast } from "sonner";
 import ButtonAdd from "../../reusable ui/ButtonAdd.jsx";
 import useFavoritesStore from "../../store/useFavoritesStore.jsx";
 import useCartStore from "../../store/useCartStore.jsx";
-import { toast } from "react-toastify";
 
 export default function LikesFavorites() {
   const { favorites, deleteFavorite } = useFavoritesStore();
