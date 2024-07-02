@@ -39,7 +39,7 @@ export default function WomanShop() {
       }}
       className="bg-slate-50"
     >
-      <section className="flex items-center justify-center h-full lg:h-screen">
+      <section className="flex h-screen items-center justify-center">
         <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">
             <motion.h2
