@@ -8,6 +8,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import PropTypes from "prop-types";
 import useCartStore from "../store/useCartStore";
 import BasketItemCard from "./BasketItemCard";
+import { Link } from "react-router-dom";
 
 export default function Basket({ open, setOpen }) {
   // Component code...
@@ -75,12 +76,14 @@ export default function Basket({ open, setOpen }) {
                     Shipping and taxes calculated at checkout.
                   </p>
                   <div className="mt-6">
-                    <a
+                    <Link
+                      onClick={() => setOpen(false)}
+                      to={"/notfinish"}
                       href="#"
                       className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
                       Checkout
-                    </a>
+                    </Link>
                   </div>
                   <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                     <p>

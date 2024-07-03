@@ -12,6 +12,7 @@ import ProductCard from "./components/card/ProductCard";
 import SignUpPage from "./pages/SignUpPage";
 import Favorites from "./pages/Favorites";
 import NavBar from "./components/NavBar";
+import NotFinish from "./pages/NotFinish";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/manshop" element={<ManShop />} />
         <Route path="/product/:id" element={<ProductCard />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/notfinish" element={<NotFinish />} />
       </Routes>
     </>
   );
