@@ -1,10 +1,12 @@
 import womanVideo from "/Womanvideo (2).mp4";
 import { Link } from "react-router-dom";
-import GradualSpacing from "../animations/GradualSpacing";
-import ScaleAnimation from "../animations/ScaleAnimation";
 import { motion } from "framer-motion";
+import manVideo from "/Manvideo (1).mp4";
+import { useState } from "react";
 
 export default function App() {
+  const [videoSrc, setVideoSrc] = useState(womanVideo);
+
   return (
     <div className="w-full h-screen relative bg-slate-50">
       <div className="relative h-screen ">
@@ -22,10 +24,19 @@ export default function App() {
             <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                 <div className="hidden sm:mb-10 sm:flex"></div>
-                <h1 className="text-4xl p-20 font-Pinot font-bold tracking-tight text-gray-900 sm:text-6xl">
-                  <GradualSpacing text="Wakaranai" />
-                </h1>
-                <ScaleAnimation>
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }} // Initial position (off-screen to the left)
+                  animate={{ opacity: 1, x: 0 }} // Animated position (on-screen)
+                  transition={{
+                    duration: 2,
+                    delay: 1,
+                    ease: [0.25, 0.1, 0.25, 1.0],
+                  }} // Animation duration
+                >
+                  <h1 className="text-4xl p-20 font-Pinot font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    Wakaranai
+                  </h1>
+
                   <p className="text-center lg:text-left">
                     Experience the perfect blend of style and comfort with
                     Wakaranai. Shop now and elevate your wardrobe with our
@@ -37,6 +48,7 @@ export default function App() {
                       to="/womanshop"
                       className="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
                       href="#"
+                      onMouseEnter={() => setVideoSrc(womanVideo)}
                     >
                       <span className="absolute -end-full transition-all group-hover:end-4">
                         <svg
@@ -65,6 +77,7 @@ export default function App() {
                       to="/manshop"
                       className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
                       href="#"
+                      onMouseEnter={() => setVideoSrc(manVideo)}
                     >
                       <span className="absolute -end-full transition-all group-hover:end-4">
                         <svg
@@ -89,21 +102,21 @@ export default function App() {
                       </span>
                     </Link>
                   </div>
-                </ScaleAnimation>
+                </motion.div>
               </div>
             </div>
           </div>
         </div>
         <div className="bg-slate-200 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <motion.video
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
-              duration: 0.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01],
+              duration: 1,
+              delay: 1,
+              ease: [0.25, 0.1, 0.25, 1.0],
             }}
-            src={womanVideo}
+            src={videoSrc}
             autoPlay
             muted
             loop
