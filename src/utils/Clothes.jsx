@@ -14,7 +14,7 @@ const Clothes = [
               "/chemiseoversivefemme (2).jpg",
               "/chemiseoversivefemme (3).jpg",
             ],
-            videos: "/womanVideo (3).mp4",
+            videos: "/Womanvideo (3).mp4",
             description:
               "This oversized shirt is a comfortable and stylish addition to your wardrobe. Made from soft and breathable fabric, it offers a relaxed fit that's perfect for casual outings. The shirt features a unique pattern that adds a touch of sophistication to any outfit.  ",
             details: [
@@ -74,7 +74,7 @@ const Clothes = [
 
               "/vesteaCarreau (4).jpg",
             ],
-            videos: "/womanVideo (1).mp4",
+            videos: "/Womanvideo (1).mp4",
             description:
               " Elevate your style with this checkered vest. The vintage-inspired design adds a touch of charm to any outfit. Made from high-quality materials, this vest is both stylish and durable. It's a versatile piece that can be worn with jeans, skirts, or dresses. ",
             details: [
@@ -134,7 +134,7 @@ const Clothes = [
               "/costumeEnLinFemme (3).jpg",
               "/costumeEnLinFemme (4).jpg",
             ],
-            videos: "/womanVideo (2).mp4",
+            videos: "/Womanvideo (2).mp4",
             description:
               " This elegant suit is perfect for special occasions. Made from lightweight and breathable linen, it offers a comfortable fit and a sophisticated look. The suit includes a jacket and matching pants, and it's available in three sizes. ",
             details: [
@@ -266,7 +266,7 @@ const Clothes = [
               "/chemiseOversizeHomme (2).jpg",
               "/chemiseOversizeHomme (3).jpg",
             ],
-            videos: "/ManVideo (1).mp4",
+            videos: "/Manvideo (1).mp4",
             description:
               "This oversized shirt is a comfortable and stylish addition to your wardrobe. Made from soft and breathable fabric, it offers a relaxed fit that's perfect for casual outings. The shirt features a simple design that's suitable for a variety of occasions.  ",
             details: [

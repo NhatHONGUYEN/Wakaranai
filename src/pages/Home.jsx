@@ -1,4 +1,4 @@
-import womanVideo from "/womanVideo (2).mp4";
+import womanVideo from "/Womanvideo (2).mp4";
 import { Link } from "react-router-dom";
 import GradualSpacing from "../animations/GradualSpacing";
 import ScaleAnimation from "../animations/ScaleAnimation";
@@ -105,8 +105,8 @@ export default function App() {
             }}
             src={womanVideo}
             autoPlay
-            loop
             muted
+            loop
             controls={false}
             className="sm:aspect-[3/2] object-cover h-screen lg:aspect-auto lg:h-full lg:w-full"
           ></motion.video>

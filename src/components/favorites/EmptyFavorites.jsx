@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import womanEmptyFavorites from "/Womanemptyfav.mp4";
 
 export default function EmptyFavorites() {
   const navigate = useNavigate();
@@ -10,12 +11,11 @@ export default function EmptyFavorites() {
   return (
     <main className="isolate z-50 h-screen relative">
       <video
-        src="/womanEmptyFav.mp4"
+        src={womanEmptyFavorites}
         alt=""
         autoPlay
         loop
         muted
-        controls={false}
         className="absolute inset-0 -z-10 w-full h-full object-cover"
       />
       <div className="absolute inset-0 flex items-center justify-center">
