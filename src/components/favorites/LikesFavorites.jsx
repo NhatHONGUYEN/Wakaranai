@@ -4,11 +4,13 @@ import useFavoritesStore from "../../store/useFavoritesStore.jsx";
 import useCartStore from "../../store/useCartStore.jsx";
 import BackgroundSquare from "../../reusable ui/BackgroundSquare.jsx";
 import OpacityAnimation from "../../animations/OpacityAnimation.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function LikesFavorites() {
   const { favorites, deleteFavorite } = useFavoritesStore();
-
   const { addItemToBasket } = useCartStore();
+
+  const navigate = useNavigate();
 
   const notifyBasket = () =>
     toast.success("Added to shopping Cart", {
@@ -27,6 +29,11 @@ export default function LikesFavorites() {
     deleteFavorite(itemId);
   };
 
+  const handleCardClick = (itemId) => {
+    navigate(`/product/${itemId}`);
+  };
+
+  console.log(favorites);
   return (
     <OpacityAnimation className="w-full h-full">
       <BackgroundSquare />
@@ -51,6 +58,7 @@ export default function LikesFavorites() {
                     src={item.image}
                     alt={item.name}
                     loading="lazy"
+                    onClick={() => handleCardClick(item.itemId)}
                     className="h-[350px] w-full  object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                   />
 

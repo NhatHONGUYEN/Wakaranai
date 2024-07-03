@@ -4,7 +4,6 @@ import ProductGallery from "./productCard/ProductGallery";
 import ProductDetails from "./productCard/ProductDetails.jsx";
 import ProductDescription from "./productCard/ProductDescription.jsx";
 import ProductButton from "./productCard/ProductButton.jsx";
-
 import OpacityAnimation from "../../animations/OpacityAnimation.jsx";
 
 export default function ProductCard() {

@@ -47,6 +47,8 @@ function App() {
           }
         />
         <Route path="/product/:id" element={<ProductCard />} />
+        <Route path="/product/:itemId" element={<ProductCard />} />
+
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/notfinish" element={<NotFinish />} />
       </Routes>

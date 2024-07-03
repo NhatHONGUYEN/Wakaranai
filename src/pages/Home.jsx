@@ -33,10 +33,11 @@ export default function App() {
                     ease: [0.25, 0.1, 0.25, 1.0],
                   }} // Animation duration
                 >
-                  <h1 className="text-4xl p-20 font-Pinot font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    Wakaranai
-                  </h1>
-
+                  <div className="flex justify-center items-center">
+                    <h1 className="text-4xl font-Pinot font-bold tracking-tight text-gray-900 sm:text-6xl p-20">
+                      Wakaranai
+                    </h1>
+                  </div>
                   <p className="text-center lg:text-left">
                     Experience the perfect blend of style and comfort with
                     Wakaranai. Shop now and elevate your wardrobe with our

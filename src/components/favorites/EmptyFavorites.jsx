@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import womanEmptyFavorites from "/Womanemptyfav.mp4";
+import { motion } from "framer-motion";
+import FADE_UP_ANIMATION_VARIANTS from "../../animations/FADE_UP_ANIMATION_VARIANTS";
 
 export default function EmptyFavorites() {
   const navigate = useNavigate();
@@ -20,7 +22,12 @@ export default function EmptyFavorites() {
         className="absolute inset-0 -z-10 w-full h-full object-cover"
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
+        <motion.div
+          variants={FADE_UP_ANIMATION_VARIANTS}
+          initial="hidden"
+          animate="show"
+          className="text-center"
+        >
           <p className="text-base font-semibold leading-8 text-white">Wait</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">
             Your favorites are empty
@@ -39,7 +46,7 @@ export default function EmptyFavorites() {
               Back to home
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </main>
   );
