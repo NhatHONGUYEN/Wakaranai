@@ -37,9 +37,9 @@ export default function WomanShop() {
           },
         },
       }}
-      className="bg-slate-50"
+      className="bg-slate-50 w-full h-full "
     >
-      <section className="flex h-screen items-center justify-center">
+      <section className="flex h-full lg:h-screen  items-center justify-center">
         <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">
             <motion.h2
@@ -59,7 +59,7 @@ export default function WomanShop() {
           </header>
 
           <motion.ul
-            className="mt-8 block  sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-8 grid gap-4 grid-cols-2 lg:grid-cols-4"
             variants={FADE_UP_ANIMATION_VARIANTS}
           >
             {Clothes[0].Clothes.female.items.map((item) => (
