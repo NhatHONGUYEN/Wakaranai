@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import useCartStore from "../store/useCartStore";
 import useAuthStore from "../store/useAuthStore"; // Import the useAuthStore
 import { Link, useNavigate } from "react-router-dom";
+import useFavoritesStore from "../store/useFavoritesStore";
 
 export default function NavBarRight() {
   const [open, setOpen] = useState(false);
   const { basket, basketCount, updateBasketCount } = useCartStore();
   const { user, signOut } = useAuthStore();
+  const { favorites } = useFavoritesStore();
+  const favoritesCount = favorites.length;
 
   const navigate = useNavigate();
 
@@ -74,7 +77,7 @@ export default function NavBarRight() {
               />
             </svg>
             <span className="badge badge-xs badge-primary absolute top-0 right-0 mr-1 mt-1 indicator-item">
-              {basketCount}
+              {favoritesCount}
             </span>
           </Link>
           <button

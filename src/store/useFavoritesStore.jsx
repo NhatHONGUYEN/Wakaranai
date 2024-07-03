@@ -46,6 +46,7 @@ const useFavoritesStore = create((set) => ({
       console.error("Error adding item to favorites: ", error);
     }
   },
+
   getFavorites: () => getFavorites(set),
   deleteFavorite: async (itemId) => {
     try {
