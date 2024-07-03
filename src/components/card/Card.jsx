@@ -27,13 +27,16 @@ export default function Card({ id, itemImages, name, price }) {
 
   return (
     <div>
-      <li key={id} className="block overflow-hidden group">
-        <div className="group block overflow-hidden relative">
+      <li
+        key={id}
+        className="block overflow-hidden group rounded md:rounded-none"
+      >
+        <div className="group block overflow-hidden relative ">
           <img
             src={itemImages[name] || ""}
             alt={name}
             loading="lazy"
-            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            className="h-52 w-full object-cover transition duration-500 sm:h-[450px] lg:group-hover:scale-105"
             onClick={handleImageClick}
           />
           <div>
