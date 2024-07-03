@@ -108,6 +108,7 @@ export default function App() {
             muted
             loop
             controls={false}
+            loading="lazy"
             className="sm:aspect-[3/2] object-cover h-screen lg:aspect-auto lg:h-full lg:w-full"
           ></motion.video>
         </div>

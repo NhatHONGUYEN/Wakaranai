@@ -130,7 +130,8 @@ export default function Login() {
           <img
             className="absolute inset-0 h-full w-full object-cover"
             src={pulloverWoman}
-            alt=""
+            alt="pulloverWoman"
+            loading="lazy"
           />
         </div>
       </div>

@@ -24,7 +24,8 @@ export default function ProductGallery({ product }) {
                 <span className="absolute inset-0 overflow-hidden rounded-md">
                   <img
                     src={imgSrc}
-                    alt=""
+                    alt={product.name}
+                    loading="lazy"
                     className="h-full w-full object-cover object-center"
                   />
                 </span>
@@ -39,6 +40,7 @@ export default function ProductGallery({ product }) {
                     autoPlay
                     loop
                     muted
+                    loading="lazy"
                     className="h-full w-full object-cover object-center"
                   ></video>
                 </span>
@@ -52,6 +54,7 @@ export default function ProductGallery({ product }) {
               <img
                 src={imgSrc}
                 alt={`${product.name} ${id}`}
+                loading="lazy"
                 className="h-full w-full object-cover object-center sm:rounded-lg"
               />
             </TabPanel>
@@ -63,6 +66,7 @@ export default function ProductGallery({ product }) {
                 autoPlay
                 loop
                 muted
+                loading="lazy"
                 className="h-full w-full object-cover object-center sm:rounded-lg"
               ></video>
             </TabPanel>

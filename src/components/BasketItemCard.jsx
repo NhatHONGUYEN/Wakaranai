@@ -21,6 +21,7 @@ export default function BasketItemCard({ item }) {
           <img
             src={item.image}
             alt={item.name}
+            loading="lazy"
             className="h-full w-full object-cover object-center"
           />
         </div>

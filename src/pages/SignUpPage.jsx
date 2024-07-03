@@ -127,7 +127,8 @@ export default function SignUpPage() {
           <img
             className="absolute inset-0 h-full w-full object-cover"
             src={signuUpPic}
-            alt=""
+            loading="lazy"
+            alt="signUpPic"
           />
         </div>
       </div>
