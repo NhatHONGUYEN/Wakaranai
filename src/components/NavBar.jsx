@@ -1,6 +1,7 @@
 import NavBarRight from "./NavBarRight";
 import { motion } from "framer-motion";
 import NavBarLeft from "./NavBarLeft";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -16,7 +17,12 @@ export default function NavBar() {
     >
       <NavBarLeft />
       <div className="navbar-center hidden lg:block">
-        <p className=" text-xl ">WAKARANAI</p>
+        <Link
+          to={"/"}
+          className=" font-Pinot font-bold tracking-tight text-gray-900 text-sm "
+        >
+          Wakaranai
+        </Link>
       </div>
       <NavBarRight />
     </motion.div>

@@ -3,6 +3,7 @@ import { Toaster, toast } from "sonner";
 import { HeartIcon } from "@heroicons/react/16/solid";
 import useCartStore from "../../../store/useCartStore.jsx";
 import useFavoritesStore from "../../../store/useFavoritesStore.jsx";
+import { motion } from "framer-motion";
 
 export default function ProductButton({ product }) {
   const notify = () =>
@@ -37,16 +38,18 @@ export default function ProductButton({ product }) {
     <div className="mt-6">
       <div className="mt-10 flex">
         <Toaster />
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={onAddToBasket}
           className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
         >
           Add to bag
-        </button>
+        </motion.button>
 
         <div>
           <Toaster />
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             type="button"
             className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
             onClick={() => {
@@ -55,7 +58,7 @@ export default function ProductButton({ product }) {
             }}
           >
             <HeartIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

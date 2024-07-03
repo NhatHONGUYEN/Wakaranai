@@ -57,7 +57,7 @@ export default function NavBarRight() {
       </button>
       <Basket open={open} setOpen={setOpen} />
       {user ? (
-        <div className="flex mr-11 md:space-x-4">
+        <div className="flex mr-4 md:space-x-4">
           <Link
             to="/favorites"
             className="btn btn-ghost btn-circle ml-4 mt-1 relative  "

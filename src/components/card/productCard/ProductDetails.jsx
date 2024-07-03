@@ -6,6 +6,7 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
+import { motion } from "framer-motion";
 
 export default function ProductDetails({ product }) {
   return (
@@ -47,11 +48,23 @@ export default function ProductDetails({ product }) {
                     </DisclosureButton>
                   </h3>
                   <DisclosurePanel as="div" className="prose prose-sm pb-6">
-                    <ul role="list">
+                    <motion.ul
+                      role="list"
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       {detail.items.map((item) => (
-                        <li key={item}>{item}</li>
+                        <motion.li
+                          key={item}
+                          initial={{ opacity: 0, y: -20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.1 }}
+                        >
+                          {item}
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   </DisclosurePanel>
                 </>
               )}

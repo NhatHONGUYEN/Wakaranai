@@ -38,7 +38,7 @@ export default function NavBarLeft() {
           <li>
             <Link
               to="/womanshop"
-              className="hover:translate-x-2 transition-transform hover:slate-200 mr-4"
+              className="hover:translate-x-2 transition-transform my-3 hover:slate-200 mr-4"
             >
               Women
             </Link>

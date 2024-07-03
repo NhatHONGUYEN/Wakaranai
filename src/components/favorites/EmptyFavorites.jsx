@@ -30,7 +30,7 @@ export default function EmptyFavorites() {
           <div className="mt-10 flex justify-center">
             <button
               onClick={handleBackToHome}
-              className="text-sm font-semibold leading-7 text-white hover:translate-x-[-5px] transition-transform"
+              className="text-sm btn btn-ghost font-semibold leading-7 text-white hover:translate-x-[-5px] transition-transform"
             >
               <span className="" aria-hidden="true">
                 &larr;
