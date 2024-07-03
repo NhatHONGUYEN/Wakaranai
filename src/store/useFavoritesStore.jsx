@@ -31,16 +31,28 @@ const useFavoritesStore = create((set) => ({
     try {
       const userRef = doc(db, "users", auth.currentUser.uid);
       const favoritesRef = collection(userRef, "favorites");
-      await addDoc(favoritesRef, {
-        id: uuidv4(), // generate a unique ID for the item
-        itemId: item.id,
-        name: item.name,
-        price: item.price,
-        image: item.image[0],
-      });
-      console.log("Item added to favorites");
+
+      // Check if the item already exists in favorites
+      const querySnapshot = await getDocs(
+        query(favoritesRef, where("itemId", "==", item.id))
+      );
+
+      if (querySnapshot.empty) {
+        // Item does not exist in favorites, add it
+        await addDoc(favoritesRef, {
+          id: uuidv4(), // generate a unique ID for the item
+          itemId: item.id,
+          name: item.name,
+          price: item.price,
+          image: item.image[0],
+        });
+        console.log("Item added to favorites");
+        toast.success("Item added to favorites");
+      } else {
+        console.log("Item already exists in favorites");
+      }
+
       // Refetch the favorites after adding an item
-      toast.success("Item added to favorites");
       getFavorites(set);
     } catch (error) {
       console.error("Error adding item to favorites: ", error);
@@ -48,6 +60,7 @@ const useFavoritesStore = create((set) => ({
   },
 
   getFavorites: () => getFavorites(set),
+
   deleteFavorite: async (itemId) => {
     try {
       console.log("Deleting favorite with itemId:", itemId);
