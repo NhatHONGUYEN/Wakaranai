@@ -2,6 +2,8 @@ import { Toaster, toast } from "sonner";
 import ButtonAdd from "../../reusable ui/ButtonAdd.jsx";
 import useFavoritesStore from "../../store/useFavoritesStore.jsx";
 import useCartStore from "../../store/useCartStore.jsx";
+import BackgroundSquare from "../../reusable ui/BackgroundSquare.jsx";
+import ScaleAnimation from "../../animations/ScaleAnimation.jsx";
 
 export default function LikesFavorites() {
   const { favorites, deleteFavorite } = useFavoritesStore();
@@ -26,7 +28,8 @@ export default function LikesFavorites() {
   };
 
   return (
-    <div className="w-full h-full">
+    <ScaleAnimation className="w-full h-full">
+      <BackgroundSquare />
       <section className="flex h-full lg:h-screen items-center justify-center">
         <div className="mx-auto max-w-screen-xl  px-4 py-20 sm:px-6  lg:px-8">
           <header>
@@ -101,6 +104,6 @@ export default function LikesFavorites() {
           </ul>
         </div>{" "}
       </section>
-    </div>
+    </ScaleAnimation>
   );
 }

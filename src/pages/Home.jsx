@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
 import womanVideo from "/womanVideo (2).mp4";
 import { Link } from "react-router-dom";
 import GradualSpacing from "../animations/GradualSpacing";
+import ScaleAnimation from "../animations/ScaleAnimation";
+import { motion } from "framer-motion";
 
 export default function App() {
   return (
@@ -24,15 +25,7 @@ export default function App() {
                 <h1 className="text-4xl p-20 font-Pinot font-bold tracking-tight text-gray-900 sm:text-6xl">
                   <GradualSpacing text="Wakaranai" />
                 </h1>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01],
-                  }}
-                >
+                <ScaleAnimation>
                   <p className="text-center lg:text-left">
                     Experience the perfect blend of style and comfort with
                     Wakaranai. Shop now and elevate your wardrobe with our
@@ -96,7 +89,7 @@ export default function App() {
                       </span>
                     </Link>
                   </div>
-                </motion.div>
+                </ScaleAnimation>
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import oversizeManShirtImage from "/chemiseOversizeHomme (1).jpg";
 import blackShirtImage from "/chemiseNoir (1).jpg";
 import pulloverImage from "/pullHomme (1).jpg";
 import Card from "../components/card/Card";
+import BackgroundSquare from "../reusable ui/BackgroundSquare.jsx";
 
 export default function ManShop() {
   const navigate = useNavigate();
@@ -35,8 +36,9 @@ export default function ManShop() {
           },
         },
       }}
-      className="bg-slate-50 w-full h-full "
+      className=" w-full h-full "
     >
+      <BackgroundSquare />
       <section className="flex h-full lg:h-screen  items-center justify-center">
         <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">
