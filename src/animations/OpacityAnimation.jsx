@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
-const ScaleAnimation = ({ children, ...props }) => {
+const OpacityAnimation = ({ children, ...props }) => {
   return (
     <motion.div
       initial="hidden"
@@ -23,4 +23,4 @@ const ScaleAnimation = ({ children, ...props }) => {
   );
 };
 
-export default ScaleAnimation;
+export default OpacityAnimation;
