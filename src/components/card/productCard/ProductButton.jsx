@@ -5,6 +5,8 @@ import useCartStore from "../../../store/useCartStore.jsx";
 import useFavoritesStore from "../../../store/useFavoritesStore.jsx";
 import { motion } from "framer-motion";
 import useAuthStore from "../../../store/useAuthStore.jsx";
+import { CiHeart } from "react-icons/ci";
+import { useState } from "react";
 
 export default function ProductButton({ product }) {
   const notify = () =>
@@ -25,7 +27,8 @@ export default function ProductButton({ product }) {
   const { addItemToBasket } = useCartStore();
   const { addToFavorites } = useFavoritesStore();
   const { user } = useAuthStore();
-  console.log(user);
+
+  const [isProductFavorite, setIsProductFavorite] = useState(false);
 
   const onAddToBasket = () => {
     addItemToBasket({
@@ -35,6 +38,14 @@ export default function ProductButton({ product }) {
       image: product.image[0],
     });
     notifyBasket();
+  };
+
+  const toggleFavorite = () => {
+    if (!isProductFavorite) {
+      addToFavorites(product);
+    }
+    setIsProductFavorite(!isProductFavorite);
+    notify();
   };
 
   return (
@@ -55,12 +66,16 @@ export default function ProductButton({ product }) {
               whileTap={{ scale: 0.9 }}
               type="button"
               className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
-              onClick={() => {
-                addToFavorites(product);
-                notify();
-              }}
+              onClick={toggleFavorite}
             >
-              <HeartIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
+              {isProductFavorite ? (
+                <HeartIcon
+                  className="h-6 w-6 flex-shrink-0"
+                  aria-hidden="true"
+                />
+              ) : (
+                <CiHeart className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
+              )}
             </motion.button>
           </div>
         )}
