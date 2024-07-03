@@ -39,8 +39,8 @@ export default function ManShop() {
       className=" w-full h-full "
     >
       <BackgroundSquare />
-      <section className="flex h-full lg:h-screen  items-center justify-center">
-        <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
+      <section className="flex h-full lg:h-screen   items-center justify-center">
+        <div className="max-w-full-xl px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
           <header className="text-center">
             <motion.h2
               className="text-xl font-bold text-gray-900 sm:text-3xl"
@@ -50,7 +50,7 @@ export default function ManShop() {
             </motion.h2>
 
             <motion.p
-              className="mx-auto mt-4 max-w-md text-gray-500"
+              className="mx-auto mt-4 max-w-md text-gray-500  2xl:py-5"
               variants={FADE_UP_ANIMATION_VARIANTS}
             >
               Browse our men's collection of high-quality and stylish clothing

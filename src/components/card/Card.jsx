@@ -37,7 +37,7 @@ export default function Card({ id, itemImages, name, price }) {
           />
           <div>
             <Toaster />
-            <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
+            <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center lg:transition-transform lg:duration-300 group-hover:lg:translate-y-[-20px]">
               <ButtonAdd onClick={onAddToBasket} />
             </div>
           </div>

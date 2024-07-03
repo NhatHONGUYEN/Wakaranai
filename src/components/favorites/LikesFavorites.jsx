@@ -55,14 +55,14 @@ export default function LikesFavorites() {
 
                   <div>
                     <Toaster />
-                    <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center transition-transform duration-300 group-hover:translate-y-[-20px]">
+                    <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center lg:transition-transform lg:duration-300 group-hover:lg:translate-y-[-20px]">
                       <ButtonAdd onClick={() => onAddToBasket(item)} />
                     </div>
                   </div>
                   <div className="absolute z-50 top-4 right-4">
                     <button
                       type="button"
-                      className="btn btn-ghost btn-circle   transition-transform duration-300 group-hover:scale-110"
+                      className="btn btn-ghost btn-circle lg:transition-transform lg:duration-300 group-hover:lg:scale-110"
                       onClick={() => onDeleteFavorite(item.itemId)}
                     >
                       {" "}

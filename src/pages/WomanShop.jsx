@@ -42,8 +42,8 @@ export default function WomanShop() {
     >
       <BackgroundSquare />
       <section className="flex h-full lg:h-screen  items-center justify-center">
-        <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 lg:px-8">
-          <header className="text-center">
+        <div className="max-w-full-xl  px-4 pt-20  sm:px-6 sm:py-12 md:my-20 lg:px-8">
+          <header className="text-center py-10">
             <motion.h2
               className="text-xl font-bold text-gray-900 sm:text-3xl"
               variants={FADE_UP_ANIMATION_VARIANTS}
@@ -52,7 +52,7 @@ export default function WomanShop() {
             </motion.h2>
 
             <motion.p
-              className="mx-auto mt-4 max-w-md text-gray-500"
+              className="mx-auto mt-4 max-w-md text-gray-500 2xl:py-5 "
               variants={FADE_UP_ANIMATION_VARIANTS}
             >
               Explore our women's collection of stylish and versatile clothing
@@ -61,7 +61,7 @@ export default function WomanShop() {
           </header>
 
           <motion.ul
-            className="mt-8 grid gap-4 grid-cols-2 lg:grid-cols-4"
+            className="mt-8  grid gap-4 grid-cols-2 lg:grid-cols-4"
             variants={FADE_UP_ANIMATION_VARIANTS}
           >
             {Clothes[0].Clothes.female.items.map((item) => (
