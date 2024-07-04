@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import useFavoritesStore from "../store/useFavoritesStore.jsx";
-import EmptyFavorites from "../components/favorites/EmptyFavorites.jsx";
-import LikesFavorites from "../components/favorites/LikesFavorites.jsx";
+import useFavoritesStore from "../../store/useFavoritesStore.jsx";
+import EmptyFavorites from "./EmptyFavorites.jsx";
+import LikesFavorites from "./LikesFavorites.jsx";
 
 export default function Favorites() {
   const { favorites, getFavorites } = useFavoritesStore();

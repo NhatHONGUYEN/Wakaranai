@@ -1,8 +1,8 @@
-import useAuthStore from "../store/useAuthStore.jsx";
+import useAuthStore from "../../store/useAuthStore.jsx";
 import pulloverWoman from "/pullFemme (2).jpg";
-import OpacityAnimation from "../animations/OpacityAnimation.jsx";
-import LoginForm from "../components/login/LoginForm.jsx";
-import LoginLink from "../components/login/LoginLink.jsx";
+import OpacityAnimation from "../../animations/OpacityAnimation.jsx";
+import LoginForm from "./LoginForm.jsx";
+import LoginLink from "./LoginLink.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
