@@ -9,6 +9,14 @@ import { CiHeart } from "react-icons/ci";
 import { useState } from "react";
 
 export default function ProductButton({ product }) {
+  const { addItemToBasket } = useCartStore();
+  const { addToFavorites } = useFavoritesStore();
+  const { user } = useAuthStore();
+  const [isProductFavorite, setIsProductFavorite] = useState(false);
+
+  /**
+   * Displays a success toast notification for adding the product to favorites.
+   */
   const notify = () =>
     toast.success("Added to favorites!", {
       style: {
@@ -16,6 +24,10 @@ export default function ProductButton({ product }) {
         color: "#FFFFFF",
       },
     });
+
+  /**
+   * Displays a success toast notification for adding the product to the shopping cart.
+   */
   const notifyBasket = () =>
     toast.success("Added to shopping Cart", {
       style: {
@@ -24,12 +36,9 @@ export default function ProductButton({ product }) {
       },
     });
 
-  const { addItemToBasket } = useCartStore();
-  const { addToFavorites } = useFavoritesStore();
-  const { user } = useAuthStore();
-
-  const [isProductFavorite, setIsProductFavorite] = useState(false);
-
+  /**
+   * Handles the click event for adding the product to the shopping cart.
+   */
   const onAddToBasket = () => {
     addItemToBasket({
       id: product.id,
@@ -40,6 +49,9 @@ export default function ProductButton({ product }) {
     notifyBasket();
   };
 
+  /**
+   * Toggles the favorite status of the product and adds/removes it from the favorites.
+   */
   const toggleFavorite = () => {
     if (!isProductFavorite) {
       addToFavorites(product);
@@ -51,6 +63,7 @@ export default function ProductButton({ product }) {
   return (
     <div className="mt-6">
       <div className="mt-10 flex">
+        {/* Button AddToBasket */}
         <Toaster />
         <motion.button
           whileTap={{ scale: 0.9 }}
@@ -59,6 +72,8 @@ export default function ProductButton({ product }) {
         >
           Add to bag
         </motion.button>
+
+        {/* Button AddToFavorite */}
         {user && (
           <div>
             <Toaster />
@@ -68,6 +83,7 @@ export default function ProductButton({ product }) {
               className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
               onClick={toggleFavorite}
             >
+              {/* Heart switch for Like Or Not */}
               {isProductFavorite ? (
                 <HeartIcon
                   className="h-6 w-6 flex-shrink-0"
