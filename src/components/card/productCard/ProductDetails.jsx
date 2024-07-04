@@ -22,6 +22,7 @@ export default function ProductDetails({ product }) {
             <Disclosure as="div" key={detail.name}>
               {({ open }) => (
                 <>
+                  {/* Button for the dropdownList */}
                   <h3>
                     <DisclosureButton className="group relative flex w-full items-center justify-between py-6 text-left">
                       <span
@@ -47,6 +48,7 @@ export default function ProductDetails({ product }) {
                       </span>
                     </DisclosureButton>
                   </h3>
+                  {/* Details List */}
                   <DisclosurePanel as="div" className="prose prose-sm pb-6">
                     <motion.ul
                       role="list"
