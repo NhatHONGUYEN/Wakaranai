@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import ButtonQuantity from "../reusable ui/ButtonQuantity";
-import useCartStore from "../store/useCartStore";
+import ButtonQuantity from "../../reusable ui/ButtonQuantity";
+import useCartStore from "../../store/useCartStore";
 import { useEffect } from "react";
 
 export default function BasketItemCard({ item }) {

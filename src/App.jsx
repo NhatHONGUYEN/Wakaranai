@@ -4,8 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Login from "./components/login/Login.jsx";
 import Error from "./pages/Error";
-import Basket from "./components/Basket";
-import { useState } from "react";
+import Basket from "./components/basket/Basket.jsx";
 import ProductCard from "./components/card/ProductCard";
 import SignUpPage from "./components/signUp/SignUpPage.jsx";
 import Favorites from "./components/favorites/Favorites.jsx";
@@ -14,7 +13,6 @@ import NotFinish from "./pages/NotFinish";
 import Shop from "./components/shop/Shop";
 
 function App() {
-  const [open, setOpen] = useState(false);
   return (
     <>
       <NavBar />
@@ -24,10 +22,7 @@ function App() {
         <Route path="*" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route
-          path="/basket"
-          element={<Basket open={open} setOpen={setOpen} />}
-        />
+        <Route path="/basket" element={<Basket />} />
         <Route path="/error" element={<Error />} />
         <Route path="/product/:id" element={<ProductCard />} />
         <Route path="/product/:itemId" element={<ProductCard />} />

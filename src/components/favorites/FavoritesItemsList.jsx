@@ -1,13 +1,28 @@
-import FavoritesButton from "./FavoritesButton.jsx";
+import { Toaster, toast } from "sonner";
+import ButtonAdd from "../../reusable ui/ButtonAdd.jsx";
 import useFavoritesStore from "../../store/useFavoritesStore.jsx";
-import { useNavigate } from "react-router-dom";
+import useCartStore from "../../store/useCartStore.jsx";
 
-export default function FavoritesItemsList() {
-  const navigate = useNavigate();
-  const { favorites } = useFavoritesStore();
+export default function LikesFavorites() {
+  const { favorites, deleteFavorite } = useFavoritesStore();
 
-  const handleCardClick = (itemId) => {
-    navigate(`/product/${itemId}`);
+  const { addItemToBasket } = useCartStore();
+
+  const notifyBasket = () =>
+    toast.success("Added to shopping Cart", {
+      style: {
+        background: "#6366F1",
+        color: "#FFFFFF",
+      },
+    });
+
+  const onAddToBasket = (item) => {
+    addItemToBasket(item);
+    notifyBasket();
+  };
+
+  const onDeleteFavorite = (itemId) => {
+    deleteFavorite(itemId);
   };
 
   return (
@@ -18,12 +33,39 @@ export default function FavoritesItemsList() {
             <img
               src={item.image}
               alt={item.name}
-              loading="lazy"
-              onClick={() => handleCardClick(item.itemId)}
               className="h-[350px] w-full  object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
             />
 
-            <FavoritesButton item={item} id={item.id} />
+            <div>
+              <Toaster />
+              <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center lg:transition-transform lg:duration-300 group-hover:lg:translate-y-[-20px]">
+                <ButtonAdd onClick={() => onAddToBasket(item)} />
+              </div>
+            </div>
+            <div className="absolute z-50 top-4 right-4">
+              <button
+                type="button"
+                className="btn btn-ghost btn-circle lg:transition-transform lg:duration-300 group-hover:lg:scale-110"
+                onClick={() => onDeleteFavorite(item.itemId)}
+              >
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+                <span className="sr-only">Delete</span>
+              </button>
+            </div>
 
             <div className="relative bg-white pt-3">
               <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">

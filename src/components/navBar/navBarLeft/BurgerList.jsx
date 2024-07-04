@@ -31,7 +31,7 @@ export default function BurgerList({ setIsMenuOpen }) {
       </li>
       <li>
         <Link
-          to="/womanshop"
+          to={`/shop?gender=female`}
           onClick={handleLinkClick}
           className="hover:translate-x-2 transition-transform my-3 hover:slate-200 mr-4"
         >
@@ -40,7 +40,7 @@ export default function BurgerList({ setIsMenuOpen }) {
       </li>
       <li>
         <Link
-          to="/manshop"
+          to={`/shop?gender=male`}
           onClick={handleLinkClick}
           className="hover:translate-x-2 transition-transform hover:slate-200 mr-4"
         >

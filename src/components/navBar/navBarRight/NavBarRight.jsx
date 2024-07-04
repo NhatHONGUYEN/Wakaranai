@@ -1,13 +1,13 @@
 import useCartStore from "../../../store/useCartStore.jsx";
 import useAuthStore from "../../../store/useAuthStore.jsx";
 import { useState, useEffect } from "react";
-import Basket from "../../Basket.jsx";
+import Basket from "../../basket/Basket.jsx";
 import BasketButton from "./BasketButton.jsx";
 import FavoriteButton from "./FavoriteButton.jsx";
 import NoUserNav from "./NoUserNav.jsx";
 
 export default function NavBarRight() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // move state variables to NavBarRight component
   const { basket, updateBasketCount } = useCartStore();
   const { user } = useAuthStore();
 
