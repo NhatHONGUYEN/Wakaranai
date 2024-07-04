@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 export default function LinkCategory({ setVideoSrc }) {
   return (
     <div className="mt-10 flex items-center justify-center gap-x-6">
+      {/* Link to women's collection */}
       <Link
-        to="/womanshop"
+        to={`/shop?gender=female`}
         className="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
         href="#"
         onMouseEnter={() => setVideoSrc(womanVideo)}
@@ -34,9 +35,9 @@ export default function LinkCategory({ setVideoSrc }) {
           For her{" "}
         </span>
       </Link>
-
+      {/* Link to men's collection */}
       <Link
-        to="/manshop"
+        to={`/shop?gender=male`}
         className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
         href="#"
         onMouseEnter={() => setVideoSrc(manVideo)}

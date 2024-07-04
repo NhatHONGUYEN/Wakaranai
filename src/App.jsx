@@ -11,16 +11,16 @@ import SignUpPage from "./pages/SignUpPage";
 import Favorites from "./pages/Favorites";
 import NavBar from "./components/navBar/NavBar.jsx";
 import NotFinish from "./pages/NotFinish";
-import { lazy, Suspense } from "react";
+import Shop from "./components/shop/Shop"; // import the Shop component
 
 function App() {
   const [open, setOpen] = useState(false);
-  const WomanShop = lazy(() => import("./components/shop/WomanShop.jsx"));
-  const ManShop = lazy(() => import("./components/shop/ManShop.jsx"));
   return (
     <>
       <NavBar />
       <Routes>
+        <Route path="/shop" element={<Shop />} />
+        {/* add the Shop component here */}
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -30,25 +30,8 @@ function App() {
           element={<Basket open={open} setOpen={setOpen} />}
         />
         <Route path="/error" element={<Error />} />
-        <Route
-          path="/womanshop"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <WomanShop />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/manshop"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <ManShop />
-            </Suspense>
-          }
-        />
         <Route path="/product/:id" element={<ProductCard />} />
         <Route path="/product/:itemId" element={<ProductCard />} />
-
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/notfinish" element={<NotFinish />} />
       </Routes>
