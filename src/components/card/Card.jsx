@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
+import OpacityAnimation from "../../animations/OpacityAnimation";
+
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
-import OpacityAnimation from "../../animations/OpacityAnimation";
 
 export default function Card({ id, itemImages, name, price }) {
   const { addItemToBasket } = useCartStore();
   const navigate = useNavigate();
 
+  /**
+   * Notifies the user that the item has been added to the shopping cart.
+   */
   const notifyBasket = () =>
     toast.success("Added to shopping Cart", {
       style: {
@@ -17,11 +21,17 @@ export default function Card({ id, itemImages, name, price }) {
       },
     });
 
+  /**
+   * Adds the item to the shopping cart and notifies the user.
+   */
   const onAddToBasket = () => {
     addItemToBasket({ id, name, price, image: itemImages[name] });
     notifyBasket();
   };
 
+  /**
+   * Handles the click event on the card image and navigates to the product page.
+   */
   const handleImageClick = () => {
     navigate(`/product/${id}`);
   };
@@ -41,6 +51,7 @@ export default function Card({ id, itemImages, name, price }) {
             onClick={handleImageClick}
           />
           <div>
+            {/* add to basket button */}
             <Toaster />
             <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center lg:transition-transform lg:duration-300 group-hover:lg:translate-y-[-20px]">
               <ButtonAdd onClick={onAddToBasket} />
