@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function NavBarLeft() {
   const navigate = useNavigate();
@@ -37,11 +38,15 @@ export default function NavBarLeft() {
             />
           </svg>
         </button>
+
         {isMenuOpen && (
-          <ul
+          <motion.ul
             tabIndex={0}
-            className="menu menu-lg bg-indigo-600 dropdown-content text-3xl rounded-box z-[1] mt-3 w-40 py-4 shadow text-slate-200 transform scale-150 transition-transform duration-2000"
-            style={{ transformOrigin: "top left" }}
+            className="menu menu-lg bg-indigo-600 dropdown-content text-3xl rounded-box z-[1] mt-3 w-40 py-4 shadow text-slate-200"
+            initial={{ x: "-100%", scale: 0 }}
+            animate={{ x: "0%", scale: 1 }}
+            exit={{ x: "-100%", scale: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <li>
               <button
@@ -72,7 +77,7 @@ export default function NavBarLeft() {
                 Men
               </Link>
             </li>
-          </ul>
+          </motion.ul>
         )}
       </div>
     </div>
