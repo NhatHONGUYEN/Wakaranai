@@ -1,10 +1,10 @@
-import FadeUpAnimation from "../../animations/FadeUpAnimations";
 import PropTypes from "prop-types";
+import OpacityAnimation from "../../animations/OpacityAnimation";
 
 export default function IntroShop({ gender }) {
   return (
     <header className="text-center py-10">
-      <FadeUpAnimation>
+      <OpacityAnimation>
         {gender === "male" ? (
           <div>
             <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
@@ -28,7 +28,7 @@ export default function IntroShop({ gender }) {
             </p>
           </div>
         )}
-      </FadeUpAnimation>
+      </OpacityAnimation>
     </header>
   );
 }

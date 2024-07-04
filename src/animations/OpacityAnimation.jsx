@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-  exit: { opacity: 0 },
+  hidden: { opacity: 0, y: 100 }, // Start at the bottom
+  visible: { opacity: 1, y: 0 }, // End at the original position
+  exit: { opacity: 0, y: 100 }, // Exit to the bottom
 };
 
 const OpacityAnimation = ({ children, ...props }) => {
@@ -14,8 +14,8 @@ const OpacityAnimation = ({ children, ...props }) => {
       exit="exit"
       variants={variants}
       transition={{
-        duration: 1.5,
-        delay: 1.5,
+        duration: 3, // Increase the duration to slow down the animation
+        delay: 1,
         ease: [0, 0.71, 0.2, 1.01],
       }}
       {...props}
