@@ -2,6 +2,7 @@ import signuUpPic from "/signuppage.jpg";
 import { useState } from "react";
 import useAuthStore from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
+import OpacityAnimation from "../animations/OpacityAnimation";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="w-full h-screen">
+    <OpacityAnimation className="w-full h-screen">
       <div className="flex min-h-full flex-1">
         <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -132,6 +133,6 @@ export default function SignUpPage() {
           />
         </div>
       </div>
-    </div>
+    </OpacityAnimation>
   );
 }

@@ -26,6 +26,7 @@ export default function EmptyFavorites() {
           variants={FADE_UP_ANIMATION_VARIANTS}
           initial="hidden"
           animate="show"
+          exit="hidden"
           className="text-center"
         >
           <p className="text-base font-semibold leading-8 text-white">Wait</p>

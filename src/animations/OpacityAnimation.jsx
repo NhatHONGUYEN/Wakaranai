@@ -10,10 +10,11 @@ const OpacityAnimation = ({ children, ...props }) => {
     <motion.div
       initial="hidden"
       animate="visible"
+      exit="hidden"
       variants={variants}
       transition={{
         duration: 2,
-        delay: 1,
+        delay: 1.5,
         ease: [0, 0.71, 0.2, 1.01],
       }}
       {...props}

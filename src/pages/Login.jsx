@@ -2,6 +2,7 @@ import { useState } from "react";
 import useAuthStore from "../store/useAuthStore.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import pulloverWoman from "/pullFemme (2).jpg";
+import OpacityAnimation from "../animations/OpacityAnimation.jsx";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full h-screen">
+    <OpacityAnimation className="w-full h-screen">
       <div className="flex min-h-full flex-1">
         <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -135,6 +136,6 @@ export default function Login() {
           />
         </div>
       </div>
-    </div>
+    </OpacityAnimation>
   );
 }

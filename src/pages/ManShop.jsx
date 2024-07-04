@@ -27,6 +27,7 @@ export default function ManShop() {
     <motion.div
       initial="hidden"
       animate="show"
+      exit="exit"
       viewport={{ once: true }}
       variants={{
         hidden: {},

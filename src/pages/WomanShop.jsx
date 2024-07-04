@@ -29,9 +29,14 @@ export default function WomanShop() {
     <motion.div
       initial="hidden"
       animate="show"
+      exit="exit"
       viewport={{ once: true }}
       variants={{
-        hidden: {},
+        hidden: {
+          transition: {
+            staggerChildren: 1,
+          },
+        },
         show: {
           transition: {
             staggerChildren: 0.5,

@@ -3,6 +3,7 @@ import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
+import OpacityAnimation from "../../animations/OpacityAnimation";
 
 export default function Card({ id, itemImages, name, price }) {
   const { addItemToBasket } = useCartStore();
@@ -26,7 +27,7 @@ export default function Card({ id, itemImages, name, price }) {
   };
 
   return (
-    <div>
+    <OpacityAnimation>
       <li
         key={id}
         className="block overflow-hidden group rounded md:rounded-none"
@@ -56,7 +57,7 @@ export default function Card({ id, itemImages, name, price }) {
           </div>
         </div>
       </li>
-    </div>
+    </OpacityAnimation>
   );
 }
 
