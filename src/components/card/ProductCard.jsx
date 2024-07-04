@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Clothes from "../../utils/Clothes";
-import ProductGallery from "./productCard/ProductGallery";
+import ProductGallery from "./productCard/productGallery/ProductGallery.jsx";
 import ProductDetails from "./productCard/ProductDetails.jsx";
 import ProductDescription from "./productCard/ProductDescription.jsx";
 import ProductButton from "./productCard/ProductButton.jsx";
