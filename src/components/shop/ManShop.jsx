@@ -1,4 +1,4 @@
-import Clothes from "../utils/Clothes";
+import Clothes from "../../utils/Clothes.jsx";
 import { motion } from "framer-motion";
 import FADE_UP_ANIMATION_VARIANTS from "../animations/FADE_UP_ANIMATION_VARIANTS.jsx";
 import { useNavigate } from "react-router-dom";
@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import oversizeManShirtImage from "/chemiseOversizeHomme (1).jpg";
 import blackShirtImage from "/chemiseNoir (1).jpg";
 import pulloverImage from "/pullHomme (1).jpg";
-import Card from "../components/card/Card";
-import BackgroundSquare from "../reusable ui/BackgroundSquare.jsx";
+import Card from "../card/Card.jsx";
+import BackgroundSquare from "../../reusable ui/BackgroundSquare.jsx";
 
 export default function ManShop() {
   const navigate = useNavigate();

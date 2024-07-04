@@ -15,8 +15,8 @@ import { lazy, Suspense } from "react";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const WomanShop = lazy(() => import("./pages/WomanShop"));
-  const ManShop = lazy(() => import("./pages/ManShop"));
+  const WomanShop = lazy(() => import("./components/shop/WomanShop.jsx"));
+  const ManShop = lazy(() => import("./components/shop/ManShop.jsx"));
   return (
     <>
       <NavBar />
