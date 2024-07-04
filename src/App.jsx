@@ -7,7 +7,7 @@ import Error from "./pages/Error";
 import Basket from "./components/Basket";
 import { useState } from "react";
 import ProductCard from "./components/card/ProductCard";
-import SignUpPage from "./pages/SignUpPage";
+import SignUpPage from "./components/signUp/SignUpPage.jsx";
 import Favorites from "./pages/Favorites";
 import NavBar from "./components/navBar/NavBar.jsx";
 import NotFinish from "./pages/NotFinish";
