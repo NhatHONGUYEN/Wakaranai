@@ -25,9 +25,9 @@ export default function App() {
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                 <div className="hidden sm:mb-10 sm:flex"></div>
                 <motion.div
-                  initial={{ opacity: 0, x: -100 }} // Initial position (off-screen to the left)
-                  animate={{ opacity: 1, x: 0 }} // Animated position (on-screen)
-                  exit={{ opacity: 0, x: 100 }} // Exit position (off-screen to the right)
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
                   transition={{
                     duration: 2,
                     delay: 1,

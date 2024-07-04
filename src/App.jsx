@@ -9,7 +9,7 @@ import { useState } from "react";
 import ProductCard from "./components/card/ProductCard";
 import SignUpPage from "./pages/SignUpPage";
 import Favorites from "./pages/Favorites";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navBar/NavBar.jsx";
 import NotFinish from "./pages/NotFinish";
 import { lazy, Suspense } from "react";
 

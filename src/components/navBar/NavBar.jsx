@@ -1,7 +1,7 @@
-import NavBarRight from "./NavBarRight";
+import NavBarRight from "./navBarRight/NavBarRight.jsx";
 import { motion } from "framer-motion";
-import NavBarLeft from "./NavBarLeft";
-import { Link } from "react-router-dom";
+import NavBarLeft from "./navBarLeft/NavBarLeft.jsx";
+import NavBarCenter from "./NavBarCenter.jsx";
 
 export default function NavBar() {
   return (
@@ -16,14 +16,7 @@ export default function NavBar() {
       className="navbar absolute top-0 z-40 "
     >
       <NavBarLeft />
-      <div className="navbar-center hidden lg:block">
-        <Link
-          to={"/"}
-          className=" font-Pinot font-bold tracking-tight text-gray-900 text-sm "
-        >
-          Wakaranai
-        </Link>
-      </div>
+      <NavBarCenter />
       <NavBarRight />
     </motion.div>
   );
