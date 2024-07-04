@@ -13,7 +13,7 @@ export default function Shop() {
     <OpacityAnimation className="w-full h-full  ">
       <BackgroundSquare />
       <section className="flex h-full lg:h-screen items-center justify-center">
-        <div className="max-w-full-xl px-4 pt-20 sm:px-6 sm:py-12 md:my-20 lg:px-8">
+        <div className="max-w-full-xl px-4 mb-14 pt-20 sm:px-6 sm:py-12 md:my-20 lg:px-8">
           <IntroShop gender={gender} />
           <ProductDisplay gender={gender} />
         </div>

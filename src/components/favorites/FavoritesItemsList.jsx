@@ -2,11 +2,12 @@ import { Toaster, toast } from "sonner";
 import ButtonAdd from "../../reusable ui/ButtonAdd.jsx";
 import useFavoritesStore from "../../store/useFavoritesStore.jsx";
 import useCartStore from "../../store/useCartStore.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function LikesFavorites() {
   const { favorites, deleteFavorite } = useFavoritesStore();
-
   const { addItemToBasket } = useCartStore();
+  const navigate = useNavigate();
 
   const notifyBasket = () =>
     toast.success("Added to shopping Cart", {
@@ -25,6 +26,11 @@ export default function LikesFavorites() {
     deleteFavorite(itemId);
   };
 
+  const handleImageClick = (itemId) => () => {
+    navigate(`/product/${itemId}`);
+  };
+
+  console.log(favorites);
   return (
     <ul className="mt-8 grid gap-4 grid-cols-2 lg:grid-cols-4">
       {favorites.map((item) => (
@@ -34,6 +40,7 @@ export default function LikesFavorites() {
               src={item.image}
               alt={item.name}
               className="h-[350px] w-full  object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+              onClick={handleImageClick(item.itemId)}
             />
 
             <div>
