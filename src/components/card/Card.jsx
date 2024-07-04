@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
-import OpacityAnimation from "../../animations/OpacityAnimation";
 
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
@@ -37,7 +36,7 @@ export default function Card({ id, itemImages, name, price }) {
   };
 
   return (
-    <OpacityAnimation>
+    <div>
       <li
         key={id}
         className="block overflow-hidden group rounded md:rounded-none"
@@ -68,7 +67,7 @@ export default function Card({ id, itemImages, name, price }) {
           </div>
         </div>
       </li>
-    </OpacityAnimation>
+    </div>
   );
 }
 

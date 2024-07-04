@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import manVideo from "/Manvideo (1).mp4";
-import womanVideo from "/Womanvideo (2).mp4";
+import womanVideo from "/Womanvideo (3).mp4";
 import { Link } from "react-router-dom";
 
 export default function LinkCategory({ setVideoSrc }) {

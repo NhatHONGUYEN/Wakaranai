@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const variants = {
   hidden: { opacity: 0, y: 100 }, // Start at the bottom
@@ -23,6 +24,10 @@ const OpacityAnimation = ({ children, ...props }) => {
       {children}
     </motion.div>
   );
+};
+
+OpacityAnimation.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default OpacityAnimation;

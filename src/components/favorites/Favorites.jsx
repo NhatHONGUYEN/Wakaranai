@@ -10,13 +10,6 @@ export default function Favorites() {
     getFavorites();
   }, [getFavorites]);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
   return (
     <div>
       {favorites.length === 0 ? <EmptyFavorites /> : <LikesFavorites />}
