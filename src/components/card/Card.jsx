@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import ButtonAdd from "../../reusable ui/ButtonAdd";
 import useCartStore from "../../store/useCartStore";
+
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 
@@ -8,6 +9,9 @@ export default function Card({ id, itemImages, name, price }) {
   const { addItemToBasket } = useCartStore();
   const navigate = useNavigate();
 
+  /**
+   * Notifies the user that the item has been added to the shopping cart.
+   */
   const notifyBasket = () =>
     toast.success("Added to shopping Cart", {
       style: {
@@ -16,26 +20,37 @@ export default function Card({ id, itemImages, name, price }) {
       },
     });
 
+  /**
+   * Adds the item to the shopping cart and notifies the user.
+   */
   const onAddToBasket = () => {
     addItemToBasket({ id, name, price, image: itemImages[name] });
     notifyBasket();
   };
 
+  /**
+   * Handles the click event on the card image and navigates to the product page.
+   */
   const handleImageClick = () => {
     navigate(`/product/${id}`);
   };
 
   return (
     <div>
-      <li key={id} className="block overflow-hidden group">
-        <div className="group block overflow-hidden relative">
+      <li
+        key={id}
+        className="block overflow-hidden group rounded md:rounded-none"
+      >
+        <div className="group block overflow-hidden relative ">
           <img
             src={itemImages[name] || ""}
             alt={name}
-            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+            loading="lazy"
+            className="h-52 w-full object-cover transition duration-500 sm:h-[450px] lg:group-hover:scale-105"
             onClick={handleImageClick}
           />
           <div>
+            {/* add to basket button */}
             <Toaster />
             <div className="absolute z-50 bottom-20 left-0 right-0 flex justify-center items-center lg:transition-transform lg:duration-300 group-hover:lg:translate-y-[-20px]">
               <ButtonAdd onClick={onAddToBasket} />

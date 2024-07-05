@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import Clothes from "../../utils/Clothes";
-import ProductGallery from "./productCard/ProductGallery";
+import ProductGallery from "./productCard/productGallery/ProductGallery.jsx";
 import ProductDetails from "./productCard/ProductDetails.jsx";
 import ProductDescription from "./productCard/ProductDescription.jsx";
 import ProductButton from "./productCard/ProductButton.jsx";
-import ScaleAnimation from "../../animations/ScaleAnimation.jsx";
+import OpacityAnimation from "../../animations/OpacityAnimation.jsx";
 
 export default function ProductCard() {
   const { id } = useParams();
@@ -28,7 +28,7 @@ export default function ProductCard() {
   }
 
   return (
-    <ScaleAnimation className="bg-white ">
+    <OpacityAnimation className="bg-white ">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           {/* Image gallery */}
@@ -43,6 +43,6 @@ export default function ProductCard() {
           </div>
         </div>
       </div>
-    </ScaleAnimation>
+    </OpacityAnimation>
   );
 }

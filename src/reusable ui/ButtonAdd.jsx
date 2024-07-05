@@ -1,6 +1,6 @@
 import { PlusIcon } from "@heroicons/react/20/solid";
-import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const ButtonAdd = ({ onClick }) => {
   return (
